@@ -1,3 +1,9 @@
+# From Company info. to Needs and Recomendation.
+> when we provide the AI model with the company data, The AI model will provide us with the docs needs and titles. (AI DOCS Topics suggestion)
+
+![Alt text](image-1.png)
+
+
 # What is the Type of chatbot that the Help portal needs and why?
 - it needs **information retrieval** from (based on) the data and the documents in the help portal website.
 - why? to avoid hallucinations and to improve the UX on the boring help portal information representation.

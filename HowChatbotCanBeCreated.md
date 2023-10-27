@@ -1,12 +1,12 @@
 # What is the Type of chatbot that the Help portal needs and why?
 - it needs **information retrieval** from (based on) the data and the documents in the help portal website.
-why? - to avoid hallucinations and to improve the UX on the boring help portal information representation.
+- why? to avoid hallucinations and to improve the UX on the boring help portal information representation.
 ## It takes the information from the documents and does things to it:
 - Summarization  
-- experimentation (From the Docs)
+- Explanation (From the Docs)
 
 
-# reply structure
+# Reply Structure
 
 ```txt
 -------------------
@@ -28,13 +28,15 @@ Breaking down the problem from the docs that the company provided
 - topic data
 
 
-## how to create the (Overall Bussiness Q )
+## How to create the (Overall Bussiness Q )
 - Provide a descriptive title.
 - Identify the target audience. (Needs and Level of knowledge)
 - scope of the documentation. (sub titles with sections)
 - What format should the documentation be in (md fils structure)
 # EX:
+
 ```md
+
 # Title:
 - How to use the new customer relationship management (CRM) software
 

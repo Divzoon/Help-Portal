@@ -1,7 +1,7 @@
 # From Company info. to Needs and Recomendation.
 > when we provide the AI model with the company data, The AI model will provide us with the docs needs and titles. (AI DOCS Topics suggestion)
 
-![Alt text](image-1.png)
+![Alt text](./image/image-1.png)
 
 
 # What is the Type of chatbot that the Help portal needs and why?
@@ -40,7 +40,8 @@ Breaking down the problem from the docs that the company provided
 - scope of the documentation. (sub titles with sections)
 - What format should the documentation be in (md fils structure)
 
-![Alt text](image.png)
+![Alt text](./image/image.png)
+
 # EX:
 
 ```md

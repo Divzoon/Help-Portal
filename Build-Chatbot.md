@@ -53,3 +53,26 @@ Here is a step-by-step explanation of how a retrieval-based chatbot works:
 4. **Generating the response**: The chatbot generates the response based on the selected response template.
 
 5. **Displaying the response**: The chatbot displays the response to the user.
+
+## Examples of retrieval-based chatbots
+
+- **Flight Booking Chatbot**: This chatbot helps users book flights, check flight status, and get information about flights.
+
+- **Customer Support Chatbot**: This chatbot helps users get answers to their queries related to a product or service.
+
+## How to build a retrieval-based chatbot?
+
+1. **Data Collection**: Collect the data for the knowledge base. The data can be collected from various sources such as FAQs, product manuals, customer support tickets, etc.
+
+2. **Data Preprocessing**: Preprocessing the data by removing the stop words, stemming, lemmatization, and extracting the intent, entity, and context of the user query.
+
+3. **Training the model**: Train the model on the preprocessed data.
+The model is trained using various matching algorithms such as:
+    - TF-IDF (Term Frequency-Inverse Document Frequency)
+    - Cosine Similarity
+    - Word2Vec
+    - BERT (Bidirectional Encoder Representations from Transformers)
+
+4. **Testing the model**: Test the model on the test dataset. The test dataset is a set of questions and answers that are not present in the training dataset.
+
+5. **Deploying the model**: Deploy the model on a server. The model can be deployed on a server using various frameworks such as Flask, Django, etc.

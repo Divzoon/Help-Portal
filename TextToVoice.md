@@ -8,6 +8,9 @@
 ## Meaning 
 - an AI language model based on transformer architecture that is pre-trained, generative, unsupervised, and capable of performing well in zero/one/few-shot multitask settings. It predicts the next token
 
+## important blog that you need to read to fully understand what is the GPT Arch. ?!!
+- https://www.kdnuggets.com/2023/05/deep-dive-gpt-models.html (Very important to finish)
+
 
 
 
@@ -41,4 +44,4 @@
 
 # Resources:
 - https://github.com/suno-ai/bark
-- 
+

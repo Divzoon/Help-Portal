@@ -1,7 +1,7 @@
 # TTV
 - Meta AI 
 - Hotshot-XL for gifs (custom) (https://huggingface.co/hotshotco/Hotshot-XL)
-
+https://www.hotshot.co 
 ![Alt text](./image/XXgnk14nIasPdkvkPlDzn.gif)
 
 # i gess there is no APIs so here is the plan:

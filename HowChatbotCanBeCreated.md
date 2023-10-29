@@ -37,10 +37,11 @@ Breaking down the problem from the docs that the company provided
 ## How to create the (Overall Bussiness Q )
 - Provide a descriptive title.
 - Identify the target audience. (Needs and Level of knowledge)
-- scope of the documentation. (sub titles with sections)
+- scope of the documentation. (subtitles with sections)
 - What format should the documentation be in (md fils structure)
 
-![Alt text](./image/image.png)
+![image](https://github.com/Divzoon/Help-Portal/assets/73494683/69e9f70a-7651-42fb-aedf-a04711964e18)
+
 
 # EX:
 
@@ -91,13 +92,13 @@ Breaking down the problem from the docs that the company provided
 
 ```
 
-# How to make sure that the API provided us with the full Doc data ?
+# How to make sure that the API provides us with the full Doc data?
 -  we can add a special word at the end of the doc (**Tell the AI that the doc should end with this special word at the end**) then we can remove it from the doc after the integration of the final version of the Doc.
 
 ## EX
 ```md
 - req: create a doc  that (...) and it must end with this special word at the end of the doc (:$%end0fTHeD0c%$:) 
-- app validation : **if** the response dosen't contain this special word (...) response with (Continue) **else** respond with DONE_DOC_IS_FINISH
+- app validation : **if** the response doesn't contain this special word (...) response with (Continue) **else** respond with DONE_DOC_IS_FINISH
 
 ```
 

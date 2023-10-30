@@ -1,47 +1,46 @@
-# AI Text-To-Voice Models
-- AudioLM based on (semantic and acoustic tokens)
-- Bark  based on (GPT-style models)
-- Vall-E  based on (encodec)
+## AI Text-To-Voice Models
 
+| Model | Type | Notable Features |
+|---|---|---|
+| AudioLM | GPT-style | Semantic and acoustic tokens |
+| Bark | GPT-style | Encoder-decoder architecture |
+| Vall-E | Fully generative | Encodec architecture |
 
-# GPT-style models
-## Meaning 
-- an AI language model based on transformer architecture that is pre-trained, generative, unsupervised, and capable of performing well in zero/one/few-shot multitask settings. It predicts the next token
+### GPT-style models
 
-## important blog that you need to read to fully understand what is the GPT Arch. ?!!
-- https://www.kdnuggets.com/2023/05/deep-dive-gpt-models.html (Very important to finish)
+**Meaning:** AI language models based on transformer architecture that are pre-trained, generative, unsupervised, and capable of performing well in zero/one/few-shot multitask settings. They predict the next token.
 
+### Important blog to read
 
+* [A Deep Dive Into GPT Models](https://www.kdnuggets.com/2023/05/deep-dive-gpt-models.html)
 
+### Bark AI Model
 
-# Bark AI Model Can convert text to voice with no APIs ?
+#### Can Bark AI Model convert text to voice with no APIs?
 
-- So it's a Model that We can Do a ReSearch on How it works internally and just use it with our Project
-- i saw the code and the implementation of it and it's so simple 
-- it needs a 12gb memory so it works perfectly but it can be custolmizable to be used for ~ 2gb.
+Yes, Bark AI Model can convert text to voice with no APIs. It is a model that can be used for research on how it works internally and can be used with any project. It needs 12GB of memory to work perfectly, but it can be customized to be used with as little as 2GB of memory.
 
-# Bark AI Model:
+#### Bark AI Model features
 
-- Voice Cloning
-- Text-Prompted Generative Audio
-- Multilingual Voices
-- Customizable Voices
-- including music, background noise and simple sound effects.
-- laughing, sighing and crying.
--  You can now use Bark with GPUs that have low VRAM (<4GB).
+* Voice cloning
+* Text-prompted generative audio
+* Multilingual voices
+* Customizable voices
+* Music, background noise, and simple sound effects
+* Laughing, sighing, and crying
+* Support for GPUs with low VRAM (<4GB)
 
+#### Challenges
 
-# Challenges:
-- By default, generate_audio works well with around 13 seconds of spoken text. For an example of how to do long-form generation, see 👉 https://github.com/suno-ai/bark/blob/main/notebooks/long_form_generation.ipynb  👈
-   - Solution: in short a for loop to map every sentence.
- 
+* By default, `generate_audio()` works well with around 13 seconds of spoken text. For long-form generation, see the github notebook: [https://github.com/suno-ai/bark/blob/main/notebooks/long_form_generation.ipynb](https://github.com/suno-ai/bark/blob/main/notebooks/long_form_generation.ipynb).
+* Solution: Use a for loop to map every sentence.
 
-# IMPORTANT: 
-- Do NOT use pip install bark. It installs a different package
-   - use instade the github repo ```py pip install git+https://github.com/huggingface/transformers.git
- ```
--  save Voice as a .wav file using a third-party library, e.g. scipy:
+#### Important
 
-# Resources:
-- https://github.com/suno-ai/bark
+* Do NOT use `pip install bark`. It installs a different package.
+* Instead, use the GitHub repo: `pip install git+https://github.com/huggingface/transformers.git`
+* To save the voice as a .wav file, use a third-party library such as scipy.
 
+### Resources
+
+* Bark AI Model GitHub repo: [https://github.com/suno-ai/bark](https://github.com/suno-ai/bark)

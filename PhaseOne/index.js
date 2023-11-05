@@ -1,9 +1,7 @@
-// use chatGPT to get documentation blog titles and descriptions as a JSON formate 
 import dotenv from 'dotenv';
-dotenv.config();
-
 import OpenAI from 'openai';
 
+dotenv.config();
 const openai = new OpenAI({
   apiKey:  process.env.OPENAI_API_KEY,
 });
@@ -27,11 +25,6 @@ async function main() {
     messages: [{ role: 'user', content: getPrompt()}],
     model: 'gpt-3.5-turbo',
   });
-
-//   console.log(chatCompletion.choices);
-//   console.log( JSON.parse(chatCompletion.choices[0].message.content));
-// to get the response 
-console.log( chatCompletion.choices[0].message.content);
 const titles = chatCompletion.choices[0].message.content;
 }
 

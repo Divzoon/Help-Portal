@@ -26,4 +26,3 @@ This technique powerd by machine learning and natural language processing.
 - Intent classification
 - Entity recognition
 - Dialog management
-

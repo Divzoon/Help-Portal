@@ -20,39 +20,36 @@ const getTitles = () => {
     return prompt;
 };
 
+const getDocumentPrompt = (title, companyInfo) => {
+  return `Generate a document discussing "${title}", related to the work of ${companyInfo.companyName} in the ${companyInfo.department} department and its location in ${companyInfo.location}. The company description is: ${companyInfo.companyDescription}.`;
+};
 
-// const GetDocPromptsArray = (titles) =>{
-//  let arr =[]
-//   titles.map((title,index)=>{
-// if(CompanyInfo.department = "Development & Software"){
-//   const DocPrompt= `Generate a document md file structured that talk about ${CompanyInfo.department} that have a title of ${title} make sure that the title has a sub titles and section and conclusion also and make sure to include examples and code if needed `
-//  arr.push(DocPrompt)
-// }else{
-//   const DocPrompt= `Generate a document md file structured that talk about ${CompanyInfo.department} that have a title of ${title} make sure that the title has a sub titles and section and conclusion also `
-//   arr.push(DocPrompt)
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-// }
-
-
-//   })
-
-//   return arr
-
-// }
 
 async function main() {
-  const chatCompletion = await openai.chat.completions.create({
-    messages: [{ role: 'user', content: getTitles()}],
-    model: 'gpt-3.5-turbo',
-  });
-const titles = chatCompletion.choices[0].message.content;
+    const chatCompletion = await openai.chat.completions.create({
+        messages: [{ role: 'user', content: getTitles()}],
+        model: 'gpt-3.5-turbo',
+    });
+    const titles = JSON.parse(chatCompletion.choices[0].message.content).titles;
 
-// const chatCompletion2 = await openai.chat.completions.create({
-//   messages: [{ role: 'user', content: GetDocPromptsArray(titles)}],
-//   model: 'gpt-3.5-turbo',
-// });
+    let fullDocument = '';
+    for (const title of titles) {
+        const prompt = getDocumentPrompt(title, CompanyInfo);
+        const documentCompletion = await openai.chat.completions.create({
+            messages: [{ role: 'user', content: prompt}],
+            model: 'gpt-3.5-turbo',
+        });
+        const document = documentCompletion.choices[0].message.content;
 
+        fullDocument += document;
 
+        // Delay for 1 second before the next API call
+        await delay(1000);
+    }
+
+    console.log(fullDocument);
 }
 
 main();

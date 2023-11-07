@@ -223,7 +223,220 @@ Generates a category as an array of tags from a title string, with a minimum of 
 ### Policies
 * Company policies (e.g., dress code, vacation policy, harassment policy)
 
+```js
+const businessDocuments = [
+  {
+    type: "legal",
+    documents: [
+      {
+        name: "Employment agreement",
+        sections: [
+          "Introduction",
+          "Job title and duties",
+          "Compensation and benefits",
+          "Confidentiality and non-compete agreements",
+          "Termination and dispute resolution",
+        ],
+      },
+      {
+        name: "Non-disclosure agreement",
+        sections: [
+          "Introduction",
+          "Confidential information",
+          "Exceptions",
+          "Term and termination",
+        ],
+      },
+      {
+        name: "Client agreement",
+        sections: [
+          "Introduction",
+          "Scope of work",
+          "Fees and payment terms",
+          "Confidentiality and non-solicitation agreements",
+          "Term and termination",
+        ],
+      },
+      {
+        name: "Partnership agreement",
+        sections: [
+          "Introduction",
+          "Partner names and ownership stakes",
+          "Contributions and duties",
+          "Profits and losses",
+          "Decision-making",
+          "Withdrawal and dissolution",
+        ],
+      },
+      {
+        name: "Business plan",
+        sections: [
+          "Executive summary",
+          "Company description",
+          "Products and services",
+          "Target market",
+          "Marketing and sales plan",
+          "Financial projections",
+        ],
+      },
+      {
+        name: "Business insurance",
+        sections: [
+          "Certificate of insurance",
+          "Policy declarations",
+          "Exclusions and limitations",
+        ],
+      },
+      {
+        name: "HR documents",
+        sections: [
+          "Employee handbook",
+          "Company policies and procedures",
+          "Job descriptions",
+          "Performance reviews",
+          "Termination paperwork",
+        ],
+      },
+      {
+        name: "Articles of Association",
+        sections: [
+          "Introduction",
+          "Company name and address",
+          "Purpose of the company",
+          "Authorized capital",
+          "Directors and officers",
+          "Shareholders' rights",
+        ],
+      },
+    ],
+  },
+  {
+    type: "financial",
+    documents: [
+      {
+        name: "Financial documents",
+        sections: [
+          "Balance sheet",
+          "Income statement",
+          "Statement of cash flows",
+        ],
+      },
+      {
+        name: "Financial agreement",
+        sections: [
+          "Introduction",
+          "Parties involved",
+          "Terms of the agreement (e.g., loan amount, interest rate, repayment terms)",
+          "Covenants and warranties",
+          "Default provisions",
+        ],
+      },
+      {
+        name: "Financial records",
+        sections: ["Invoices", "Receipts", "Bank statements", "Credit card statements"],
+      },
+      {
+        name: "Invoice",
+        sections: [
+          "Invoice number",
+          "Date",
+          "Customer information",
+          "Product or service description",
+          "Quantity",
+          "Price",
+          "Total amount due",
+        ],
+      },
+    ],
+  },
+  {
+    type: "operational",
+    documents: [
+      {
+        name: "Company bylaws",
+        sections: [
+          "Introduction",
+          "Meetings of shareholders and directors",
+          "Officers and their duties",
+          "Amendments",
+        ],
+      },
+      {
+        name: "Meeting minutes",
+        sections: [
+          "Date and time of meeting",
+          "Attendees",
+          "Motions made and votes taken",
+        ],
+      },
+      {
+        name: "Operational documents",
+        sections: ["Standard operating procedures", "Training materials", "Work instructions"],
+      },
+    ],
+  },
+  {
+    type: "transactional",
+    documents: [
+      {
+        name: "Invoice",
+        sections: [
+          "Invoice number",
+          "Date",
+          "Customer information",
+          "Product or service description",
+          "Quantity",
+          "Price",
+          "Total amount due",
+        ],
+      },
+      {
+        name: "Memo",
+        sections: ["To", "From", "Date", "Subject", "Body of memo"],
+      },
+      {
+        name: "Proposals",
+        sections: [
+          "Introduction",
+"Problem statement",
+"Proposed solution",
+"Benefits to the customer",
+"Pricing"
+],
+},
+  {
+      name: "API documentation",
+      sections: [
+        "Introduction",
+        "API overview",
+        "Authentication and authorization",
+        "Endpoints",
+        "Data models",
+        "Error codes",
+      ],
+    },
+    {
+      name: "Business creation documents",
+      sections: ["Articles of incorporation", "Operating agreement", "Business licenses and permits"],
+    },
+  ],
+},
+{
+  type: "other",
+  documents: [
+    {
+      name: "Attendance records",
+      sections: ["Employee name", "Date", "Time in", "Time out"],
+    },
+    {
+      name: "Policies",
+      sections: ["Company policies (e.g., dress code, vacation policy, harassment policy)"],
+    },
+  ],
+},
+];
 
+```
 
 
 

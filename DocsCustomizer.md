@@ -74,6 +74,160 @@ Generates a category as an array of tags from a title string, with a minimum of 
   
 ```
 
+
+
+## Legal documents
+
+### Employment agreement
+* Introduction
+* Job title and duties
+* Compensation and benefits
+* Confidentiality and non-compete agreements
+* Termination and dispute resolution
+
+### Non-disclosure agreement
+* Introduction
+* Confidential information
+* Exceptions
+* Term and termination
+
+### Client agreement
+* Introduction
+* Scope of work
+* Fees and payment terms
+* Confidentiality and non-solicitation agreements
+* Term and termination
+
+### Partnership agreement
+* Introduction
+* Partner names and ownership stakes
+* Contributions and duties
+* Profits and losses
+* Decision-making
+* Withdrawal and dissolution
+
+### Business plan
+* Executive summary
+* Company description
+* Products and services
+* Target market
+* Marketing and sales plan
+* Financial projections
+
+### Business insurance
+* Certificate of insurance
+* Policy declarations
+* Exclusions and limitations
+
+### HR documents
+* Employee handbook
+* Company policies and procedures
+* Job descriptions
+* Performance reviews
+* Termination paperwork
+
+### Articles of Association
+* Introduction
+* Company name and address
+* Purpose of the company
+* Authorized capital
+* Directors and officers
+* Shareholders' rights
+
+## Financial documents
+
+### Financial documents
+* Balance sheet
+* Income statement
+* Statement of cash flows
+
+### Financial agreement
+* Introduction
+* Parties involved
+* Terms of the agreement (e.g., loan amount, interest rate, repayment terms)
+* Covenants and warranties
+* Default provisions
+
+### Financial records
+* Invoices
+* Receipts
+* Bank statements
+* Credit card statements
+
+### Invoice
+* Invoice number
+* Date
+* Customer information
+* Product or service description
+* Quantity
+* Price
+* Total amount due
+
+## Operational documents
+
+### Company bylaws
+* Introduction
+* Meetings of shareholders and directors
+* Officers and their duties
+* Amendments
+
+### Meeting minutes
+* Date and time of meeting
+* Attendees
+* Motions made and votes taken
+
+### Operational documents
+* Standard operating procedures
+* Training materials
+* Work instructions
+
+## Transactional documents
+
+### Invoice (same as financial documents)
+
+### Memo
+* To
+* From
+* Date
+* Subject
+* Body of memo
+
+### Proposals
+* Introduction
+* Problem statement
+* Proposed solution
+* Benefits to the customer
+* Pricing
+
+### API documentation
+* Introduction
+* API overview
+* Authentication and authorization
+* Endpoints
+* Data models
+* Error codes
+
+### Business creation documents
+* Articles of incorporation
+* Operating agreement
+* Business licenses and permits
+
+## Other
+
+### Attendance records
+* Employee name
+* Date
+* Time in
+* Time out
+
+### Policies
+* Company policies (e.g., dress code, vacation policy, harassment policy)
+
+
+
+
+
+
 ## How to Create Product Documentation?
 
 1. Identify your target audience.

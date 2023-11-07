@@ -1,15 +1,62 @@
-> from the dashboard, then ```AIDocs```, on generate button:
-# Doc Type:
-![Types-documents](https://github.com/Divzoon/Help-Portal/assets/73494683/ece6c15a-fc07-4828-b16b-b6961eb0924f)
-![images](https://github.com/Divzoon/Help-Portal/assets/73494683/bc3429dd-0451-4604-8c28-58fd1b875cea)
+## Types of business documents
 
+**Legal documents**
 
-# How to Create Product Documentation?
-Identify your Target Audience.
-Categorize the Information.
-Provide an Entry Point in the Product's Description.
-Keep it Simple and Handy.
-Utilize a Documentation Plan.
-Use Infographics and Diagrams.
-Proper Access to Information.
-Provide Solutions.
+* Employment agreement
+* Non-disclosure agreement
+* Client agreement
+* Partnership agreement
+* Business plan
+* Business insurance
+* HR documents
+* Articles of Association
+
+**Financial documents**
+
+* Financial documents
+* Financial agreement
+* Financial records
+* Invoice
+
+**Operational documents**
+
+* Company bylaws
+* Meeting minutes
+* Operational documents
+
+**Transactional documents**
+
+* Invoice
+* Memo
+* Proposals
+* API documentation
+* Business creation documents
+
+**Other**
+
+* Attendance records
+* Policies
+
+---
+
+## Phase two: Target audience (Q&A)
+
+* Age
+* Occupation
+* Interests (tags)
+* Needs (tags)
+* Lifestyle:
+    * Early adopter
+    * Casual user
+    * Extensive user
+
+## How to Create Product Documentation?
+
+1. Identify your target audience.
+2. Categorize the information.
+3. Provide an entry point in the product's description.
+4. Keep it simple and handy.
+5. Utilize a documentation plan.
+6. Use infographics and diagrams.
+7. Provide proper access to information.
+8. Provide solutions.

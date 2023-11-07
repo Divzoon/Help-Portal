@@ -49,8 +49,18 @@
     * Early adopter
     * Casual user
     * Extensive user
+```js
 
+const targetAudience = {
+  age: [18, 35],
+  occupation: ["Software Engineer", "Data Scientist", "Product Manager"],
+  interests: ["Technology", "Machine Learning", "Artificial Intelligence"],
+  needs: ["Help with their work", "Stay up-to-date on the latest trends"],
+  lifestyle: ["Early adopter", "Casual user", "Extensive user"],
+};
 
+```
+> Each doc type has it own structure.
 
 # Get from titles => tags
 ```md

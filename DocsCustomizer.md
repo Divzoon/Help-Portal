@@ -50,6 +50,20 @@
     * Casual user
     * Extensive user
 
+
+
+# Get from titles => tags
+```md
+Generates a category as an array of tags from a title string, with a minimum of 1 and a maximum of 5 tags.
+
+  Args:
+    title: A string representing the title.
+
+  Returns:
+    A category, represented as a list of strings.
+  
+```
+
 ## How to Create Product Documentation?
 
 1. Identify your target audience.

@@ -1,43 +1,45 @@
 import dotenv from 'dotenv';
 import OpenAI from 'openai';
 import ora from 'ora';
+const MongoClient = require('mongodb').MongoClient;
+const ora = require('ora');
+const fs = require('fs/promises'); // Use fs.promises for async file operations
 
 
-const MongoWrite = (title, document) => {
-    const uri = process.env.MONGO_DB_URI;
-
-    // Create an ora spinner
+const connectToMongoDB = async (uri) => {
     const spinner = ora('Connecting to MongoDB...').start();
     
-    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-    
-    client.connect(err => {
-        if (err) {
-            spinner.fail('Failed to connect to MongoDB');
-            console.error(err);
-            return;
-        }
-    
-        const collection = client.db("test").collection("devices");
-        // perform actions on the collection object
-    
-        // Stop the spinner and indicate successful connection
+    try {
+        const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+        await client.connect();
         spinner.succeed('Connected to MongoDB');
-    
-        // Close the MongoDB connection
-        client.close();
-    
-        // Save documents to a JSON file
-        const fs = require('fs');
-        fs.writeFile('documents.json', JSON.stringify(documents), (err) => {
-            if (err) throw err;
-            console.log('Documents saved to documents.json');
-        });
-    });
-
-}
+        return client;
+    } catch (error) {
+        spinner.fail('Failed to connect to MongoDB');
+        console.error(error);
+        throw error;
+    }
+};
 
 
+const MongoWrite = async (data, collectionName = 'documents') => {
+    try {
+        const uri = process.env.MONGO_DB_URI;
+        const client = await connectToMongoDB(uri);
+
+        const collection = client.db("AIDocsGenerator").collection(collectionName);
+
+        // Save all documents to MongoDB
+        await collection.insertMany(data);
+        console.log('Documents saved to MongoDB');
+
+    } finally {
+        // Close the MongoDB connection in a finally block to ensure it's closed even if an error occurs
+        if (client) {
+            await client.close();
+        }
+    }
+};
 
 
 
@@ -110,13 +112,39 @@ async function main() {
 
   spinner.succeed('Documents generated successfully!');
 
+//restructure the Data as a JSON object with a "titles" array and a "document" string
+//example: { "title1": {Document1:"Document1 details",},
+//           "title2": {Document2:"Document2 details",},
+
+
+
+const TITLES = titles;
+const DOCUMENTS = documents;
+
+const data = TITLES.map((title, index) => ({
+    title,
+    document: DOCUMENTS[index]
+}));
+
+
+
+
+
+
 
     // Write documents to MongoDB
     const mongoSpinner = ora('Writing documents to MongoDB...').start();
-    MongoWrite(titles, fullDocument);
+    try {
+      // Save documents to MongoDB the data object
+        await MongoWrite(data);
+        mongoSpinner.succeed('Documents written to MongoDB');
 
-    // Stop the spinner and indicate successful connection
-    mongoSpinner.succeed('Documents written to MongoDB');
+    } catch (error) {
+        mongoSpinner.fail('Failed to write documents to MongoDB');
+        console.error(error);
+        throw error;
+    }
+
 
 }
 

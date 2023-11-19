@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import OpenAI from 'openai';
+import ora from 'ora';
 
 dotenv.config();
 const openai = new OpenAI({
@@ -21,25 +22,26 @@ const getTitles = () => {
 };
 
 const getDocumentPrompt = (title, companyInfo) => {
-  return `Generate a document discussing "${title}", related to the work of ${companyInfo.companyName} in the ${companyInfo.department} department and its location in ${companyInfo.location}. The company description is: ${companyInfo.companyDescription}.`;
+  return `Generate a document discussing "${title}", related to the work of ${companyInfo.companyName} in the ${companyInfo.department} department and its location in ${CompanyInfo.location}. The company description is: ${CompanyInfo.companyDescription}.`;
 };
 
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const cache = {}; // Initialize an empty cache object
 
-async function main() {
-    console.log("Generating documents...");
-  const chatCompletion = await openai.chat.completions.create({
-    messages: [{ role: "user", content: getTitles() }],
-    model: "gpt-3.5-turbo",
-  });
-  const titles = JSON.parse(chatCompletion.choices[0].message.content).titles;
-console.log("Titles are generated");
-  let fullDocument = "";
+const spinner = ora('Generating documents...');
+spinner.start();
 
+async function main() {
+  // Generate document titles
+  const titlesSpinner = spinner.extend('Generating document titles...');
+  const titles = await getTitles();
+  titlesSpinner.succeed();
+
+  // Generate documents
+  const documentsSpinner = spinner.extend('Generating documents...');
+  let fullDocument = "";
   for (const title of titles) {
-    console.log("Generating document number: ", title);
     const cachedDocument = cache[title]; // Check if the document is already cached
 
     if (!cachedDocument) {
@@ -55,10 +57,10 @@ console.log("Titles are generated");
     } else {
       fullDocument += cachedDocument; // Use cached document if available
     }
-console.log("Document number: ", title,"is generated");
-    // Delay for 1 second before the next API call
-    await delay(1000);
   }
+  documentsSpinner.succeed();
+
+  spinner.succeed('Documents generated successfully!');
 
   console.log(fullDocument);
 }

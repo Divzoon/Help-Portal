@@ -2,6 +2,54 @@ import dotenv from 'dotenv';
 import OpenAI from 'openai';
 import ora from 'ora';
 
+
+const MongoWrite = (title, document) => {
+    const uri = process.env.MONGO_DB_URI;
+
+    // Create an ora spinner
+    const spinner = ora('Connecting to MongoDB...').start();
+    
+    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+    
+    client.connect(err => {
+        if (err) {
+            spinner.fail('Failed to connect to MongoDB');
+            console.error(err);
+            return;
+        }
+    
+        const collection = client.db("test").collection("devices");
+        // perform actions on the collection object
+    
+        // Stop the spinner and indicate successful connection
+        spinner.succeed('Connected to MongoDB');
+    
+        // Close the MongoDB connection
+        client.close();
+    
+        // Save documents to a JSON file
+        const fs = require('fs');
+        fs.writeFile('documents.json', JSON.stringify(documents), (err) => {
+            if (err) throw err;
+            console.log('Documents saved to documents.json');
+        });
+    });
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 dotenv.config();
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
@@ -34,12 +82,12 @@ spinner.start();
 
 async function main() {
   // Generate document titles
-  const titlesSpinner = spinner.extend('Generating document titles...');
+  const titlesSpinner = spinner.info('Generating document titles...');
   const titles = await getTitles();
   titlesSpinner.succeed();
 
   // Generate documents
-  const documentsSpinner = spinner.extend('Generating documents...');
+  const documentsSpinner = spinner.info('Generating documents...');
   let fullDocument = "";
   for (const title of titles) {
     const cachedDocument = cache[title]; // Check if the document is already cached
@@ -62,7 +110,14 @@ async function main() {
 
   spinner.succeed('Documents generated successfully!');
 
-  console.log(fullDocument);
+
+    // Write documents to MongoDB
+    const mongoSpinner = ora('Writing documents to MongoDB...').start();
+    MongoWrite(titles, fullDocument);
+
+    // Stop the spinner and indicate successful connection
+    mongoSpinner.succeed('Documents written to MongoDB');
+
 }
 
 main();

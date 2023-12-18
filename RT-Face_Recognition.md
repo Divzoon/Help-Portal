@@ -35,3 +35,4 @@ This approach allows our client to proactively address issues, improve service q
 
 # resource
 - https://medium.com/analytics-vidhya/building-a-real-time-emotion-detector-towards-machine-with-e-q-c20b17f89220
+- https://github.com/travistangvh/emotion-detection-in-real-time/
